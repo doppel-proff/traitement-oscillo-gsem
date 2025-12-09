@@ -6,11 +6,11 @@ Created on Mon Dec 12:2025
 
 #Import des modules 
 import os
-import files_utils as fu
-import list_utils as lu
-import tekfiles_utils as tu
-import graph_utils as gu
-import math_utils as mu
+from utils import files_utils as fu
+from utils import list_utils as lu
+from utils import tekfiles_utils as tu
+from utils import graph_utils as gu
+from utils import math_utils as mu
 import matplotlib.pyplot as plt
 
 Path=os.getcwd()
