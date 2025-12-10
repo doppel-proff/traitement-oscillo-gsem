@@ -15,12 +15,14 @@ import matplotlib.pyplot as plt
 Path=os.getcwd()
 
 #ouverture des fichiers
-Fichiers = fu.parcour("bulk_mesures")
+fu.sort_ext("bulk_mesures")
+Bulk_Path = os.path.join("bulk_mesures","csv")
+Fichiers = fu.parcour(Bulk_Path)
 
 L_o=[]
 for i in range(len(Fichiers)):
     F=Fichiers[i]
-    Meas_Path = os.path.join("bulk_mesures",F)
+    Meas_Path = os.path.join(Bulk_Path,F)
     Li = fu.open_csv(Meas_Path)
     L_o.append(Li)
 
@@ -71,8 +73,6 @@ for i in range(len(MX)):
     M.append([MX[i],MY[i]])
 
 gu.multigraph(M,Path,Repo,Fig_name,Y_Axes,X_Axes)
+fu.sort_ext(Repo)
 
-print(len(M))
-print(len(M[0]))
-print(len(M[0][0]))
-print(M[0][0][0])
+print("programme exécuté")
